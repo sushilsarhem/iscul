@@ -84,7 +84,7 @@ const RenderMarks = ({
 
   return (
     <div className={styles.wrapper}>
-      <h2>{`${assesstmentType} exam report`}</h2>
+      <h2>{`${assesstmentType} report`}</h2>
       {studentsList && studentsList.length ? (
         studentsList.map((data, index = 0) => (
           <div key={index} className={styles.container}>
