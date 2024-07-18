@@ -36,7 +36,7 @@ const App = () => {
         { path: "managestudents", element: <ManageStudents /> },
         { path: "updatestudent", element: <UpdateStudent /> },
         { path: "settings", element: <Settings /> },
-        { path: "settings", element: <Settings /> },
+        // { path: "settings", element: <Settings /> },
         { path: "examination", element: <Examination /> },
         { path: "examcontrol", element: <ExamControl /> },
       ],
