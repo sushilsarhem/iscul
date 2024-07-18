@@ -9,7 +9,8 @@
 }
 .profile_container img {
   /* position: relative; */
-  max-width: 100%;
+  /* max-width: 100%; */
+  width: 100%; /* changes made to see effect*/
   height: 100%;
   border-radius: 10%;
 }
