@@ -470,7 +470,7 @@ const ExamControl = () => {
   return (
     <div className={styles.wrapper}>
       <div>
-        <h2>{data.assesstmentType} DATA ENTRY</h2>
+        <h2>{data.assesstmentType} ENTRY</h2>
       </div>
 
       <form className={styles.form_input}>
