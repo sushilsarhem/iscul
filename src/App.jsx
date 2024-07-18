@@ -5,7 +5,6 @@ import Signup from "./components/routes/Signup";
 import Login from "./components/routes/Login";
 import { ProtectedRoutes } from "./components/routes/ProtectedRoutes";
 import PublicRoute from "./components/routes/PublicRoute";
-import Dash from "./components/routes/Dash";
 import VerifyAlert from "./components/routes/VerifyAlert";
 import VerifyUser from "./components/routes/VerifyUser";
 import Students from "./components/pages/profile/Students";
@@ -17,6 +16,7 @@ import UpdateStudent from "./components/pages/students/UpdateStudent";
 import Settings from "./components/pages/students/Settings";
 import Examination from "./components/pages/students/Examination";
 import ExamControl from "./components/pages/students/ExamControl";
+import NotFound from "./components/routes/NotFound";
 const App = () => {
   const router = createBrowserRouter([
     {
@@ -42,6 +42,7 @@ const App = () => {
       ],
     },
     { path: "verifyuser", element: <VerifyUser /> },
+    { path: "*", element: <NotFound /> },
   ]);
   return (
     <div>
