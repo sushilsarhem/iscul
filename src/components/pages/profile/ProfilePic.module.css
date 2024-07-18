@@ -1,6 +1,6 @@
 .profile_container {
   position: absolute;
-  bottom: 3%;
+  bottom: 13%;
   left: 0.5%;
   max-width: 150px;
   max-height: 150px;
@@ -10,9 +10,10 @@
 .profile_container img {
   /* position: relative; */
   /* max-width: 100%; */
-  width: 100%; /* changes made to see effect*/
-  height: 100%;
+  width: 200px; /* changes made to see effect*/
+  height: 200px;
   border-radius: 10%;
+  border: 3px solid whitesmoke;
 }
 .uploadbutton {
   position: absolute;
@@ -37,5 +38,14 @@
 .profile_container:hover {
   .camera_icon {
     display: block;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .profile_container {
+    bottom: 10px;
+  }
+  .profile_container img {
+    width: 150px;
+    height: 150px;
   }
 }
