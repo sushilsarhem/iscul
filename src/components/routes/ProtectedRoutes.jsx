@@ -28,7 +28,7 @@ export const ProtectedRoutes = () => {
               fontFamily: "Arial, Helvetica, sans-serif",
             }}
           >
-            ISKUL
+            ISCUL
           </h1>
         </Link>
 

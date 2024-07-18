@@ -77,7 +77,7 @@ export const Signup = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h1 className={styles.brand}>ISKUL</h1>
+      <h1 className={styles.brand}>ISCUL</h1>
       {/* <h1 className="signup-heading">Let's get started</h1> */}
 
       <form onSubmit={handleSubmit} className={styles.form}>
