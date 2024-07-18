@@ -1,0 +1,53 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* width: 100vw; */
+  height: 100%;
+  overflow: hidden;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100vw;
+  padding: 10px 12%;
+  background-color: #165a72;
+}
+.menu_icon {
+  position: relative;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+.logout_button {
+  display: none;
+  position: absolute;
+  width: 150px;
+  right: 9.5%;
+  top: 57px;
+  text-align: center;
+  background-color: whitesmoke;
+  z-index: 5;
+  border: 1px solid gray;
+}
+.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .logout_button {
+    right: 0;
+    width: 100vw;
+    text-align: center;
+    min-height: 100vh;
+    background-color: rgba(181, 180, 178, 0.9);
+    bottom: 0;
+  }
+}

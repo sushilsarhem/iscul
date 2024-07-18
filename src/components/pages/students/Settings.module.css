@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 15px;
+}
+.container h2 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  word-spacing: 10px;
+  /* transform: scale(1, 1); */
+}
+.form_area {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  background-color: rgb(110, 108, 108);
+  border-radius: 7px;
+  padding: 10px;
+}
+.container label {
+  color: aliceblue;
+  font-size: 20px;
+}
+/* for changing options color */
+.container .options {
+  color: black;
+  font-size: 20px;
+}
+
+.options {
+  width: 200px;
+}
+.marks {
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+}
+.marks label {
+  color: aliceblue;
+  font-size: 20px;
+  width: 100px;
+}
+.marks input {
+  height: 37px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 4px;
+}
+@media only screen and (max-width: 990px) {
+  /* .container {
+  } */
+  .form_area {
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 90vw;
+  }
+  .options {
+    width: 350px;
+  }
+  .marks {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: auto;
+  }
+  .marks label {
+    color: aliceblue;
+    font-size: 20px;
+    align-self: center;
+  }
+  .marks input {
+    width: 80px;
+  }
+}

@@ -1,0 +1,16 @@
+.photo_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  width: 90vw;
+  height: 400px;
+  /* background-color: red; */
+  overflow: hidden;
+}
+@media only screen and (max-width: 540px) {
+  .photo_container {
+    height: 270px;
+  }
+}

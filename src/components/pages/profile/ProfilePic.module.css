@@ -1,0 +1,40 @@
+.profile_container {
+  position: absolute;
+  bottom: 3%;
+  left: 0.5%;
+  max-width: 150px;
+  max-height: 150px;
+  /* background-color: red; */
+  z-index: 1;
+}
+.profile_container img {
+  /* position: relative; */
+  max-width: 100%;
+  height: 100%;
+  border-radius: 10%;
+}
+.uploadbutton {
+  position: absolute;
+  font-size: 35px;
+  /* top: 50%; */
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+
+.camera_icon {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+}
+.profile_container input {
+  display: none;
+}
+.profile_container:hover {
+  .camera_icon {
+    display: block;
+  }
+}

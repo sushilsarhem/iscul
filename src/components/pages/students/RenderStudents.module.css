@@ -1,0 +1,36 @@
+.wrapper {
+  box-sizing: border-box;
+  padding: 10px;
+}
+.students_table {
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  border-spacing: 0;
+  text-align: justify;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  /* cursor: pointer; */
+}
+tbody {
+  cursor: pointer;
+}
+
+.table_heading th {
+  width: 300px;
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(41, 40, 40);
+}
+.table_data td {
+  width: 300px;
+  padding: 10px;
+  font-size: 20px;
+  box-shadow: 2px 2px 3px black;
+  background-color: rgb(214, 213, 213);
+}
+/* .table_data td:hover {
+  color: white;
+  background-color: black;
+} */

@@ -1,0 +1,60 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px 0;
+  max-width: 90vw;
+}
+.wrapper h3 {
+  word-spacing: 7px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: gray;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 15px 0;
+  width: 100%; /* Adjust as necessary */
+}
+.accordian {
+  display: flex;
+}
+.container p {
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Center text within the <p> */
+  padding-right: 40px;
+  color: white;
+  font-size: 28px;
+}
+.container .icon {
+  justify-content: flex-start;
+  color: white;
+  height: 40px;
+  cursor: pointer;
+}
+.dropDown {
+  display: none;
+  width: inherit;
+  background-color: rgb(203, 201, 201);
+  padding: 5px;
+}
+
+.active {
+  width: inherit;
+  background-color: rgb(203, 201, 201);
+  padding: 5px;
+}
+.delete {
+  color: red;
+  font-size: 25px;
+  transition: transform 0.2s;
+  /* color: rgb(196, 17, 17); */
+}
+.delete:hover {
+  transform: scale(1.5);
+}
