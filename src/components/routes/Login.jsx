@@ -57,7 +57,7 @@ const Login = () => {
   }
   return (
     <div className={styles.wrapper}>
-      <h1>ISKUL</h1>
+      <h1>ISCUL</h1>
       {loginError && <p className={styles.errorMessage}>{errorMessage}</p>}
       <form className={styles.form} onSubmit={handleSubmit}>
         <label htmlFor="email">EMAIL:</label>

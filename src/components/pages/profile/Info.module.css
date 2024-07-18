@@ -21,3 +21,6 @@
 button:hover {
   background-color: #258fb6;
 }
+a {
+  text-decoration: none;
+}

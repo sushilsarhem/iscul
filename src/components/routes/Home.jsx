@@ -9,7 +9,7 @@ const Home = () => {
         <img src="/pexels-cottonbro-5076520.jpg" alt="happy using system" />
         <div className={styles.overtop}>
           <h3>WELCOME TO</h3>
-          <h1>"ISKUL"</h1>
+          <h1>"ISCUL"</h1>
           <h5>YOUR ULTIMATE PLATFORM FOR STREAMLINED WORK</h5>
           {/* <h4>NOW YOU HAVE THE PLATFORM TO EASE YOUR WORK</h4> */}
           {/* <h2>Welcome to EKUN, your ultimate streamlined work platform.</h2> */}
