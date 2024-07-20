@@ -39,6 +39,105 @@ const Profile = () => {
     }));
   };
 
+  //previous code for submit
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   const user = await account.get();
+  //   const {
+  //     firstname,
+  //     lastname,
+  //     address,
+  //     schoolname,
+  //     schooladdress,
+  //     classno,
+  //     section,
+  //     subjects,
+  //     profilepic,
+  //     coverpic,
+  //   } = enteredValue;
+  //   try {
+  //     const checkUserExist = await databases.getDocument(
+  //       import.meta.env.VITE_APPWRITE_USER_DATABASE_ID,
+  //       import.meta.env.VITE_APPWRITE_USER_COLLECTION_ID,
+  //       user.$id
+  //     );
+  //     if (checkUserExist) {
+  //       const res = await databases.updateDocument(
+  //         import.meta.env.VITE_APPWRITE_USER_DATABASE_ID,
+  //         import.meta.env.VITE_APPWRITE_USER_COLLECTION_ID,
+  //         user.$id,
+  //         {
+  //           // userId: user.$id,
+  //           firstname,
+  //           lastname,
+  //           address,
+  //           schoolname,
+  //           schooladdress,
+  //           classno,
+  //           section,
+  //           subjects,
+  //           // profilepic: "",
+  //           // coverpic: "",
+  //         }
+  //       );
+  //       // console.log(res);
+  //       setEnteredValue({
+  //         firstname: "",
+  //         lastname: "",
+  //         address: "",
+  //         schoolname: "",
+  //         schooladdress: "",
+  //         classno: "",
+  //         section: "",
+  //         subjects: [],
+  //       });
+  //       setSelectedOption([]);
+  //       if (res) {
+  //         navigate("/profile");
+  //       }
+  //       // console.log(enteredValue);
+  //     } else {
+  //       const res = await databases.createDocument(
+  //         import.meta.env.VITE_APPWRITE_USER_DATABASE_ID,
+  //         import.meta.env.VITE_APPWRITE_USER_COLLECTION_ID,
+  //         user.$id,
+  //         // "unique()",
+  //         {
+  //           userId: user.$id,
+  //           firstname,
+  //           lastname,
+  //           address,
+  //           schoolname,
+  //           schooladdress,
+  //           classno,
+  //           section,
+  //           subjects,
+  //           profilepic: "",
+  //           coverpic: "",
+  //         }
+  //       );
+  //       console.log(res);
+  //       setEnteredValue({
+  //         firstname: "",
+  //         lastname: "",
+  //         address: "",
+  //         schoolname: "",
+  //         schooladdress: "",
+  //         classno: "",
+  //         section: "",
+  //         subjects: [],
+  //       });
+  //       setSelectedOption([]);
+  //       if (res) {
+  //         navigate("/profile");
+  //       }
+  //       // console.log(enteredValue);
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const user = await account.get();
@@ -54,87 +153,56 @@ const Profile = () => {
       profilepic,
       coverpic,
     } = enteredValue;
+
     try {
-      const checkUserExist = await databases.getDocument(
+      await databases.updateDocument(
         import.meta.env.VITE_APPWRITE_USER_DATABASE_ID,
         import.meta.env.VITE_APPWRITE_USER_COLLECTION_ID,
-        user.$id
+        user.$id,
+        {
+          firstname,
+          lastname,
+          address,
+          schoolname,
+          schooladdress,
+          classno,
+          section,
+          subjects,
+          profilepic,
+          coverpic,
+        }
       );
-      if (checkUserExist) {
-        const res = await databases.updateDocument(
-          import.meta.env.VITE_APPWRITE_USER_DATABASE_ID,
-          import.meta.env.VITE_APPWRITE_USER_COLLECTION_ID,
-          user.$id,
-          {
-            // userId: user.$id,
-            firstname,
-            lastname,
-            address,
-            schoolname,
-            schooladdress,
-            classno,
-            section,
-            subjects,
-            // profilepic: "",
-            // coverpic: "",
-          }
-        );
-        // console.log(res);
-        setEnteredValue({
-          firstname: "",
-          lastname: "",
-          address: "",
-          schoolname: "",
-          schooladdress: "",
-          classno: "",
-          section: "",
-          subjects: [],
-        });
-        setSelectedOption([]);
-        if (res) {
-          navigate("/profile");
-        }
-        // console.log(enteredValue);
-      } else {
-        const res = await databases.createDocument(
-          import.meta.env.VITE_APPWRITE_USER_DATABASE_ID,
-          import.meta.env.VITE_APPWRITE_USER_COLLECTION_ID,
-          user.$id,
-          // "unique()",
-          {
-            userId: user.$id,
-            firstname,
-            lastname,
-            address,
-            schoolname,
-            schooladdress,
-            classno,
-            section,
-            subjects,
-            profilepic: "",
-            coverpic: "",
-          }
-        );
-        console.log(res);
-        setEnteredValue({
-          firstname: "",
-          lastname: "",
-          address: "",
-          schoolname: "",
-          schooladdress: "",
-          classno: "",
-          section: "",
-          subjects: [],
-        });
-        setSelectedOption([]);
-        if (res) {
-          navigate("/profile");
-        }
-        // console.log(enteredValue);
-      }
     } catch (error) {
-      // console.log(error);
+      if (error.code === 404) {
+        // Document not found
+        try {
+          await databases.createDocument(
+            import.meta.env.VITE_APPWRITE_USER_DATABASE_ID,
+            import.meta.env.VITE_APPWRITE_USER_COLLECTION_ID,
+            user.$id,
+            {
+              userId: user.$id,
+              firstname,
+              lastname,
+              address,
+              schoolname,
+              schooladdress,
+              classno,
+              section,
+              subjects,
+              profilepic,
+              coverpic,
+            }
+          );
+        } catch (createError) {
+          console.error("Failed to create document:", createError);
+        }
+      } else {
+        console.error("Failed to update document:", error);
+      }
     }
+
+    navigate("/profile");
   };
 
   return (
@@ -148,7 +216,7 @@ const Profile = () => {
           value={enteredValue.firstname}
           onChange={(event) => handleInput("firstname", event.target.value)}
           autoFocus
-          required
+          // required
         />
 
         <label htmlFor="lastname">Last name:</label>
@@ -157,7 +225,7 @@ const Profile = () => {
           name="lastname"
           value={enteredValue.lastname}
           onChange={(event) => handleInput("lastname", event.target.value)}
-          required
+          // required
         />
 
         <label htmlFor="address">Address:</label>
@@ -166,7 +234,7 @@ const Profile = () => {
           name="address"
           value={enteredValue.address}
           onChange={(event) => handleInput("address", event.target.value)}
-          required
+          // required
         />
 
         <label htmlFor="school">School name:</label>
@@ -175,7 +243,7 @@ const Profile = () => {
           name="schoolname"
           value={enteredValue.schoolname}
           onChange={(event) => handleInput("schoolname", event.target.value)}
-          required
+          // required
         />
 
         <label htmlFor="schooladdress">School address:</label>
@@ -184,7 +252,7 @@ const Profile = () => {
           name="schooladdress"
           value={enteredValue.schooladdress}
           onChange={(event) => handleInput("schooladdress", event.target.value)}
-          required
+          // required
         />
 
         <label htmlFor="classno">Class:</label>
@@ -193,7 +261,7 @@ const Profile = () => {
           name="classno"
           value={enteredValue.classno}
           onChange={(event) => handleInput("classno", event.target.value)}
-          required
+          // required
         />
 
         <label htmlFor="section">Section:</label>
@@ -202,7 +270,7 @@ const Profile = () => {
           name="section"
           value={enteredValue.section}
           onChange={(event) => handleInput("section", event.target.value)}
-          required
+          // required
         />
 
         <label htmlFor="subjects">Select subjects:</label>
