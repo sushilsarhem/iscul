@@ -114,8 +114,8 @@ const RenderAssestment = ({ formData, handleSubmit }) => {
             <div
               className={`${active[index] ? styles.active : styles.dropDown}`}
             >
-              {data.allSubjects.map((sub) => (
-                <div>{sub}</div>
+              {data.allSubjects.map((sub, index) => (
+                <div key={index}>{sub}</div>
               ))}
               <div className={styles.fullmark}>Fullmark:{data.fullmark}</div>
               <div className={styles.passmark}>Passmark:{data.passmark}</div>

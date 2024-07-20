@@ -41,6 +41,7 @@ const Profile = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const user = await account.get();
     const {
       firstname,
       lastname,
@@ -50,12 +51,10 @@ const Profile = () => {
       classno,
       section,
       subjects,
-      //// tsting
       profilepic,
       coverpic,
     } = enteredValue;
     try {
-      const user = await account.get();
       const checkUserExist = await databases.getDocument(
         import.meta.env.VITE_APPWRITE_USER_DATABASE_ID,
         import.meta.env.VITE_APPWRITE_USER_COLLECTION_ID,
