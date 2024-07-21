@@ -30,6 +30,8 @@ const ExamControl = () => {
   const [ass4, setAss4] = useState(null);
   const [halfYearlyMarks, setHalfYearlyMarks] = useState(null);
 
+  // console.log(allSubjects);
+
   useEffect(() => {
     fetchUser();
     // if (teacher && assesstmentType) {
@@ -249,18 +251,23 @@ const ExamControl = () => {
         const studentDataA2 = a2[0];
 
         finalMarks = {
-          English: (
-            parseFloat(marks.English || 0) +
-            parseFloat(studentDataA1.english) * 0.25 +
-            parseFloat(studentDataA2.english) * 0.25
+          English1: (
+            parseFloat(marks.English1 || 0) +
+            parseFloat(studentDataA1.english1) * 0.25 +
+            parseFloat(studentDataA2.english1) * 0.25
+          ).toFixed(2),
+          English2: (
+            parseFloat(marks.English2 || 0) +
+            parseFloat(studentDataA1.english2) * 0.25 +
+            parseFloat(studentDataA2.english2) * 0.25
           ).toFixed(2),
           Science: (
             parseFloat(marks.Science || 0) +
             parseFloat(studentDataA1.science) * 0.25 +
             parseFloat(studentDataA2.science) * 0.25
           ).toFixed(2),
-          SoScience: (
-            parseFloat(marks.SoScience || 0) +
+          Sscience: (
+            parseFloat(marks.Sscience || 0) +
             parseFloat(studentDataA1.sscience) * 0.25 +
             parseFloat(studentDataA2.sscience) * 0.25
           ).toFixed(2),
@@ -269,8 +276,8 @@ const ExamControl = () => {
             parseFloat(studentDataA1.hindi) * 0.25 +
             parseFloat(studentDataA2.hindi) * 0.25
           ).toFixed(2),
-          Manipuri: (
-            parseFloat(marks.Manipuri || 0) +
+          Meiteimayek: (
+            parseFloat(marks.Meiteimayek || 0) +
             parseFloat(studentDataA1.meiteimayek) * 0.25 +
             parseFloat(studentDataA2.meiteimayek) * 0.25
           ).toFixed(2),
@@ -294,9 +301,24 @@ const ExamControl = () => {
             parseFloat(studentDataA1.dictation) * 0.25 +
             parseFloat(studentDataA2.dictation) * 0.25
           ).toFixed(2),
+          Moralvalue: (
+            parseFloat(marks.Moralvalue || 0) +
+            parseFloat(studentDataA1.moralvalue) * 0.25 +
+            parseFloat(studentDataA2.moralvalue) * 0.25
+          ).toFixed(2),
+          Handwriting: (
+            parseFloat(marks.Handwriting || 0) +
+            parseFloat(studentDataA1.handwriting) * 0.25 +
+            parseFloat(studentDataA2.handwriting) * 0.25
+          ).toFixed(2),
+          Conversation: (
+            parseFloat(marks.Conversation || 0) +
+            parseFloat(studentDataA1.conversation) * 0.25 +
+            parseFloat(studentDataA2.conversation) * 0.25
+          ).toFixed(2),
         };
 
-        console.log(finalMarks);
+        // console.log(finalMarks);
       }
     }
     /////////////////////////////////////////////////////
@@ -315,11 +337,18 @@ const ExamControl = () => {
         const studentDataHY = hY[0];
 
         finalMarks = {
-          English: (
-            (parseFloat(marks.English || 0) +
-              parseFloat(studentDataA3.english) * 0.25 +
-              parseFloat(studentDataA4.english) * 0.25 +
-              parseFloat(studentDataHY.english)) /
+          English1: (
+            (parseFloat(marks.English1 || 0) +
+              parseFloat(studentDataA3.english1) * 0.25 +
+              parseFloat(studentDataA4.english1) * 0.25 +
+              parseFloat(studentDataHY.english1)) /
+            2
+          ).toFixed(2),
+          English2: (
+            (parseFloat(marks.English2 || 0) +
+              parseFloat(studentDataA3.english2) * 0.25 +
+              parseFloat(studentDataA4.english2) * 0.25 +
+              parseFloat(studentDataHY.english2)) /
             2
           ).toFixed(2),
           Science: (
@@ -329,11 +358,11 @@ const ExamControl = () => {
               parseFloat(studentDataHY.science)) /
             2
           ).toFixed(2),
-          SoScience: (
-            (parseFloat(marks.SoScience || 0) +
+          Sscience: (
+            (parseFloat(marks.Sscience || 0) +
               parseFloat(studentDataA3.sscience) * 0.25 +
               parseFloat(studentDataA4.sscience) * 0.25 +
-              parseFloat(studentDataHY.dictation)) /
+              parseFloat(studentDataHY.sscience)) /
             2
           ).toFixed(2),
           Hindi: (
@@ -343,8 +372,8 @@ const ExamControl = () => {
               parseFloat(studentDataHY.hindi)) /
             2
           ).toFixed(2),
-          Manipuri: (
-            (parseFloat(marks.Manipuri || 0) +
+          Meiteimayek: (
+            (parseFloat(marks.Meiteimayek || 0) +
               parseFloat(studentDataA3.meiteimayek) * 0.25 +
               parseFloat(studentDataA4.meiteimayek) * 0.25 +
               parseFloat(studentDataHY.meiteimayek)) /
@@ -378,9 +407,30 @@ const ExamControl = () => {
               parseFloat(studentDataHY.dictation)) /
             2
           ).toFixed(2),
+          Moralvalue: (
+            (parseFloat(marks.Moralvalue || 0) +
+              parseFloat(studentDataA3.moralvalue) * 0.25 +
+              parseFloat(studentDataA4.moralvalue) * 0.25 +
+              parseFloat(studentDataHY.moralvalue)) /
+            2
+          ).toFixed(2),
+          Handwriting: (
+            (parseFloat(marks.Handwriting || 0) +
+              parseFloat(studentDataA3.handwriting) * 0.25 +
+              parseFloat(studentDataA4.handwriting) * 0.25 +
+              parseFloat(studentDataHY.handwriting)) /
+            2
+          ).toFixed(2),
+          Conversation: (
+            (parseFloat(marks.Conversation || 0) +
+              parseFloat(studentDataA3.conversation) * 0.25 +
+              parseFloat(studentDataA4.conversation) * 0.25 +
+              parseFloat(studentDataHY.conversation)) /
+            2
+          ).toFixed(2),
         };
 
-        console.log(finalMarks);
+        // console.log(finalMarks);
       }
     }
 
@@ -391,56 +441,103 @@ const ExamControl = () => {
       class: teacher.classno,
       section: teacher.section,
       teacherId: teacher.$id,
-      english: finalMarks.English || marks.English,
-      science: finalMarks.Science || marks.Science,
-      sscience: finalMarks.SoScience || marks.SoScience,
-      hindi: finalMarks.Hindi || marks.Hindi,
-      meiteimayek: finalMarks.Manipuri || marks.Manipuri,
-      maths: finalMarks.Maths || marks.Maths,
-      computer: finalMarks.Computer || marks.Computer,
-      gk: finalMarks.GK || marks.GK,
-      dictation: finalMarks.Dictation || marks.Dictation,
-      arts: marks.Arts,
+      english1: (finalMarks.English1 || parseFloat(marks.English1)).toString(),
+      english2: (finalMarks.English2 || parseFloat(marks.English2)).toString(),
+      science: (finalMarks.Science || parseFloat(marks.Science)).toString(),
+      sscience: (finalMarks.Sscience || parseFloat(marks.Sscience)).toString(),
+      hindi: (finalMarks.Hindi || parseFloat(marks.Hindi)).toString(),
+      meiteimayek: (
+        finalMarks.Meiteimayek || parseFloat(marks.Meiteimayek)
+      ).toString(),
+      maths: (finalMarks.Maths || parseFloat(marks.Maths)).toString(),
+      computer: (finalMarks.Computer || parseFloat(marks.Computer)).toString(),
+      gk: (finalMarks.GK || parseFloat(marks.GK) || 0).toString(),
+      dictation: (
+        finalMarks.Dictation ||
+        parseFloat(marks.Dictation) ||
+        0
+      ).toString(),
+      moralvalue: (
+        finalMarks.Moralvalue ||
+        parseFloat(marks.Moralvalue) ||
+        0
+      ).toString(),
+      conversation: (
+        finalMarks.Conversation ||
+        parseFloat(marks.Conversation) ||
+        0
+      ).toString(),
+      handwriting: (
+        finalMarks.Handwriting ||
+        parseFloat(marks.Handwriting) ||
+        0
+      ).toString(),
+      // arts: (parseFloat(marks.Arts) || 0).toString(),
       passmark: passmark,
       fullmark: fullmark,
     };
 
     // console.log(data);
-    const {
-      english,
-      science,
-      sscience,
-      hindi,
-      meiteimayek,
-      maths,
-      computer,
-      gk,
-      dictation,
-      arts,
-    } = data;
-    // Convert destructured data to floats and store in an array
-    const marksArray = [
-      parseFloat(english),
-      parseFloat(science),
-      parseFloat(sscience),
-      parseFloat(hindi),
-      parseFloat(meiteimayek),
-      parseFloat(maths),
-      parseFloat(computer),
-      parseFloat(gk),
-      parseFloat(dictation),
-    ];
+
+    // filtered the above data that matches allSubjects array /////////////////////////////////////////
+    // Convert Arr values to lowercase
+    const normalizedSubjects = allSubjects.map((item) => item.toLowerCase());
+
+    // Create newArr with matching key-value pairs
+    let subjectsMarks = [];
+
+    for (const [key, value] of Object.entries(data)) {
+      if (normalizedSubjects.includes(key.toLowerCase())) {
+        // newData[key] = value;
+        // console.log("true");
+        subjectsMarks.push(parseFloat(value));
+      }
+      // console.log(`${key}: ${value}`);
+    }
+
+    // console.log(subjectsMarks);
+
+    // const {
+    //   english,
+    //   science,
+    //   sscience,
+    //   hindi,
+    //   meiteimayek,
+    //   maths,
+    //   computer,
+    //   gk,
+    //   dictation,
+    //   // arts,
+    // } = data;
+    // // Convert destructured data to floats and store in an array
+    // const marksArray = [
+    //   parseFloat(english),
+    //   parseFloat(science),
+    //   parseFloat(sscience),
+    //   parseFloat(hindi),
+    //   parseFloat(meiteimayek),
+    //   parseFloat(maths),
+    //   parseFloat(computer),
+    //   parseFloat(gk),
+    //   parseFloat(dictation),
+    // ];
 
     // console.log(marksArray.length);
+    // console.log(marksArray);
 
-    let sum = marksArray.reduce((total, initialValu) => total + initialValu);
-    const status = marksArray.some((mark) => mark < passmark) ? "FAIL" : "PASS";
+    let sum = subjectsMarks.reduce((total, initialValu) => total + initialValu);
+    const status = subjectsMarks.some((mark) => mark < passmark)
+      ? "FAIL"
+      : "PASS";
 
-    const numberOfSubjects = marksArray.length;
+    // const numberOfSubjects = marksArray.length; // changed from previous
+    const numberOfSubjects = allSubjects.length;
     let percentage = ((sum / (numberOfSubjects * fullmark)) * 100)
       .toFixed(2)
       .toString();
     // console.log("total mark is: ", sum);
+    // console.log(numberOfSubjects);
+
     // console.log("percentage of the student is: ", percentage);
     // console.log("Status: ", status);
     const total = sum.toString();

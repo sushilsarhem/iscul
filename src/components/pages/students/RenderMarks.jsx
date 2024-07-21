@@ -105,8 +105,12 @@ const RenderMarks = ({
               <input type="text" value={data.section} readOnly />
             </div>
             <div className={styles.items}>
-              <label htmlFor="rollno">English</label>
-              <input type="text" value={data.english} readOnly />
+              <label htmlFor="rollno">English1</label>
+              <input type="text" value={data.english1} readOnly />
+            </div>
+            <div className={styles.items}>
+              <label htmlFor="rollno">English2</label>
+              <input type="text" value={data.english2} readOnly />
             </div>
             <div className={styles.items}>
               <label htmlFor="rollno">Science</label>
@@ -136,13 +140,22 @@ const RenderMarks = ({
               <label htmlFor="rollno">G.K</label>
               <input type="text" value={data.gk} readOnly />
             </div>
-            <div className={styles.items}>
-              <label htmlFor="rollno">Arts</label>
-              <input type="text" value={data.arts} readOnly />
-            </div>
+
             <div className={styles.items}>
               <label htmlFor="rollno">Dictation</label>
               <input type="text" value={data.dictation} readOnly />
+            </div>
+            <div className={styles.items}>
+              <label htmlFor="rollno">MoralValue</label>
+              <input type="text" value={data.moralvalue} readOnly />
+            </div>
+            <div className={styles.items}>
+              <label htmlFor="rollno">Handwriting</label>
+              <input type="text" value={data.handwriting} readOnly />
+            </div>
+            <div className={styles.items}>
+              <label htmlFor="rollno">Conversation</label>
+              <input type="text" value={data.conversation} readOnly />
             </div>
             <div className={styles.items}>
               <label htmlFor="fullmark">F.M</label>

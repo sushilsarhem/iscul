@@ -9,18 +9,21 @@ const assesstment = [
 ];
 
 const subjectList = [
-  { value: "English", label: "English" },
+  { value: "English1", label: "English1" },
+  { value: "English2", label: "English2" },
   { value: "Hindi", label: "Hindi" },
   { value: "Science", label: "Science" },
-  { value: "SoScience", label: "SoScience" },
-  { value: "Manipuri", label: "Manipuri" },
+  { value: "Sscience", label: "Sscience" },
+  { value: "Meiteimayek", label: "Meiteimayek" },
   { value: "Maths", label: "Maths" },
   { value: "Computer", label: "Computer" },
 ];
 const optionalList = [
   { value: "GK", label: "GK" },
-  { value: "Arts", label: "Arts" },
   { value: "Dictation", label: "Dictation" },
+  { value: "Moralvalue", label: "Moralvalue" },
+  { value: "Handwriting", label: "Handwriting" },
+  { value: "Conversation", label: "Conversation" },
 ];
 
 export default assesstment;
