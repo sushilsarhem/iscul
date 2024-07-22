@@ -441,20 +441,37 @@ const ExamControl = () => {
       class: teacher.classno,
       section: teacher.section,
       teacherId: teacher.$id,
-      english1: finalMarks.English1 || parseFloat(marks.English1),
-      english2: finalMarks.English2 || parseFloat(marks.English2),
-      science: finalMarks.Science || parseFloat(marks.Science),
-      sscience: finalMarks.Sscience || parseFloat(marks.Sscience),
-      hindi: finalMarks.Hindi || parseFloat(marks.Hindi),
-      meiteimayek: finalMarks.Meiteimayek || parseFloat(marks.Meiteimayek),
-      maths: finalMarks.Maths || parseFloat(marks.Maths),
-      computer: finalMarks.Computer || parseFloat(marks.Computer),
-      gk: finalMarks.GK || parseFloat(marks.GK) || 0,
-      dictation: finalMarks.Dictation || parseFloat(marks.Dictation) || 0,
-      moralvalue: finalMarks.Moralvalue || parseFloat(marks.Moralvalue) || 0,
-      conversation:
-        finalMarks.Conversation || parseFloat(marks.Conversation) || 0,
-      handwriting: finalMarks.Handwriting || parseFloat(marks.Handwriting) || 0,
+      english1: (finalMarks.English1 || parseFloat(marks.English1)).toString(),
+      english2: (finalMarks.English2 || parseFloat(marks.English2)).toString(),
+      science: (finalMarks.Science || parseFloat(marks.Science)).toString(),
+      sscience: (finalMarks.Sscience || parseFloat(marks.Sscience)).toString(),
+      hindi: (finalMarks.Hindi || parseFloat(marks.Hindi)).toString(),
+      meiteimayek: (
+        finalMarks.Meiteimayek || parseFloat(marks.Meiteimayek)
+      ).toString(),
+      maths: (finalMarks.Maths || parseFloat(marks.Maths)).toString(),
+      computer: (finalMarks.Computer || parseFloat(marks.Computer)).toString(),
+      gk: (finalMarks.GK || parseFloat(marks.GK) || 0).toString(),
+      dictation: (
+        finalMarks.Dictation ||
+        parseFloat(marks.Dictation) ||
+        0
+      ).toString(),
+      moralvalue: (
+        finalMarks.Moralvalue ||
+        parseFloat(marks.Moralvalue) ||
+        0
+      ).toString(),
+      conversation: (
+        finalMarks.Conversation ||
+        parseFloat(marks.Conversation) ||
+        0
+      ).toString(),
+      handwriting: (
+        finalMarks.Handwriting ||
+        parseFloat(marks.Handwriting) ||
+        0
+      ).toString(),
       // arts: (parseFloat(marks.Arts) || 0).toString(),
       passmark: passmark,
       fullmark: fullmark,
@@ -536,14 +553,14 @@ const ExamControl = () => {
         datas
       );
 
-      // console.log("Document created");
+      console.log("Document created");
       setSubmitCount((prevCount) => prevCount + 1);
       setSelectedRollno(null);
       setMarks({});
       // setBooks("");
       // setSubjectEnrich("");
     } catch (error) {
-      // console.log("unable to create document", error);
+      console.log("unable to create document", error);
     }
   }
 
