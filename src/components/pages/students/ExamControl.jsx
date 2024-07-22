@@ -553,14 +553,14 @@ const ExamControl = () => {
         datas
       );
 
-      console.log("Document created");
+      // console.log("Document created");
       setSubmitCount((prevCount) => prevCount + 1);
       setSelectedRollno(null);
       setMarks({});
       // setBooks("");
       // setSubjectEnrich("");
     } catch (error) {
-      console.log("unable to create document", error);
+      // console.log("unable to create document", error);
     }
   }
 
